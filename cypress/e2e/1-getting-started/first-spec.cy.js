@@ -16,4 +16,9 @@ describe('Example tests', () => {
       .should('be.visible')
       .and('not.be.disabled')
   })
+
+  it('Navigate to contact us page', () => {
+    cy.get('a[href="/contact_us"]').should('be.visible').click()
+    cy.contains('h2', /Contact Us/i).should('be.visible')
+  })
 })
